@@ -12,7 +12,7 @@ const NewsItem = (props) => {
 
 const News = (props) => {
     let [state, setState] = useState({
-        status: null,
+        isFetching: false,
         error: null
     })
 
@@ -20,7 +20,7 @@ const News = (props) => {
         props.getNews().then((response) => {
             setState(prev => ({
                 ...prev,
-                status: response.status,
+                isFetching: response.isFetching,
                 error: response.error
             }))
         });
@@ -28,23 +28,19 @@ const News = (props) => {
 
     return <div>
         {
-            state.status === 'ok'
+            state.isFetching === true
                 ? <div>
                     {
-                        state.error === 'ok'
-                            ? <div>
+                        state.error
+                            ? <h1>{state.error}</h1>
+                            : <div>
                                 {
-                                    state.error === 'ok'
-                                        ? <div>
-                                            {props.news.map((a) => <NewsItem key={a.id} {...a} />)}
-                                            <p>Количество постов: {props.news.length}</p>
-                                        </div>
-                                        : <h1>
-                                            {state.error}
-                                        </h1>
+                                    <div>
+                                        {props.news.map((a) => <NewsItem key={a.id} {...a} />)}
+                                        <p>Количество постов: {props.news.length}</p>
+                                    </div>
                                 }
                             </div>
-                            : <h1>{state.error}</h1>
                     }
                 </div>
                 : <h1>Wait...</h1>

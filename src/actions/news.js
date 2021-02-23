@@ -10,12 +10,12 @@ export const getNews = () => async (dispatch) => {
         }
 
         return {
-            status: 'ok',
-            error: 'ok'
+            isFetching: true,
+            error: false
         }
     } catch (err) {
         return {
-            status: 'ok',
+            isFetching: true,
             error: defineError('not_connected_to_network')
         }
     }

@@ -7,7 +7,7 @@ import ProfileSocials from './ProfileSocials/ProfileSocials';
 
 const Profile = (props) => {
     let [state, setState] = useState({
-        status: null,
+        isFetching: false,
         error: null
     })
 
@@ -15,7 +15,7 @@ const Profile = (props) => {
         props.getProfile(props.userId).then((response) => {
             setState(prev => ({
                 ...prev,
-                status: response.status,
+                isFetching: response.isFetching,
                 error: response.error,
             }))
         });
@@ -23,13 +23,14 @@ const Profile = (props) => {
 
     return <div>
         {
-            state.error === 'ok'
+            state.isFetching === true
                 ? <div>
                     {
                         <div>
                             {
-                                state.status == 'ok'
-                                    ? <div>
+                                state.error
+                                    ? <h1>{state.error || 'Ошибка'}</h1>
+                                    : <div>
                                         <h1>Profile</h1>
                                         <div>
                                             <p>Мой город: {props.profile.city ? props.profile.city : <i>Город не указан</i>}</p>
@@ -37,7 +38,6 @@ const Profile = (props) => {
                                             <ProfileSocials {...props} />
                                         </div>
                                     </div>
-                                    : <h1>{state.error}</h1>
                             }
                         </div>
                     }

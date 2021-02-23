@@ -11,19 +11,19 @@ export const getProfile = (userId) => async (dispatch) => {
             response.data.data.social = array;
             dispatch(getProfileSucces(response.data.data));
             return {
-                status: 'ok',
-                error: 'ok'
+                isFetching: true,
+                error: false
             }
         } else {
             dispatch(getProfileSucces(response.data.data));
             return {
-                status: 'err',
+                isFetching: true,
                 error: defineError(response.data.message)
             }
         }
     } catch (err) {
         return {
-            status: 'err',
+            isFetching: true,
             error: defineError('not_connected_to_network')
         }
     }
