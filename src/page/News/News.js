@@ -12,7 +12,7 @@ const NewsItem = (props) => {
 }
 
 const News = (props) => {
-    
+
     useLayoutEffect(() => {
         props.getNews();
     }, [])
@@ -24,7 +24,7 @@ const News = (props) => {
 
     return <div>
         <IsLoading isFetching={props.isFetching}>
-            {props.error === 'ok' ? <h1>{props.error}</h1> : data}
+            {props.error === 'news_ok' ? data : <h1>{props.error}</h1>}
         </IsLoading>
     </div>
 }

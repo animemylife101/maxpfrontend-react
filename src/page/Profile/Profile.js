@@ -19,9 +19,10 @@ const Profile = (props) => {
     </div>
 
     return <div>
+        {console.log(props.error)}
         <IsLoading isFetching={props.isFetching}>
             {
-                props.error === 'ok' ? data : <h1>{props.error}</h1>
+                props.error === 'profile_ok' ? data : <h1>{props.error}</h1>
             }
         </IsLoading>
     </div>

@@ -13,7 +13,7 @@ export const getProfile = (userId) => async (dispatch) => {
             if (result.length) {
                 response.data.data.social = array;
                 dispatch(getProfileSucces(response.data.data));
-                dispatch(setError('ok'));
+                dispatch(setError('profile_ok'));
                 dispatch(setPreloader(true));
             } else {
                 dispatch(getProfileSucces(response.data.data));

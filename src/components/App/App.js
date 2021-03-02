@@ -17,7 +17,7 @@ function App() {
         <div>
           <Switch>
             <Route exact path='/' render={() => <Home />} />
-            <Route path='/news' render={() => <News />} />
+            <Route path='/news' component={ News } />
             <Route path='/profile' component={Profile} />
             <Route path='/login' component={Login} />
             <Route component={NotFound} />

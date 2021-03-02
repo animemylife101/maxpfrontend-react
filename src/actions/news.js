@@ -10,12 +10,13 @@ export const getNews = () => async (dispatch) => {
             let response = await API.news.getNews();
             if (response.data.status === 'ok') {
                 dispatch(getNewsSuccess(response.data.data));
-                dispatch(setError('ok'));
+                dispatch(setError('news_ok'));
                 dispatch(setPreloader(true));
             }
-            dispatch(setError(false));
-            dispatch(setPreloader(true));
-    
+            else {
+                dispatch(setError(response.data.message));
+                dispatch(setPreloader(true));
+            }
         } catch (err) {
             dispatch(setError(defineError('server_failed')));
             dispatch(setPreloader(true));
