@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router';
 import { login } from '../../../actions/auth';
 import style from '../Login.module.css';
 
@@ -10,9 +9,25 @@ const LoginForm = (props) => {
             email: '',
             password: ''
         },
-        isFetching: false,
-        error: ''
+        isFetching: props.isFetching,
+        error: props.error
     })
+
+    useLayoutEffect(() => {
+        setState(prev => ({
+            ...prev,
+            error: '',
+            isFetching: false
+        }));
+        // componentwillunmount alternative hook
+        return () => {
+            setState(prev => ({
+                ...prev,
+                error: '',
+                isFetching: false
+            }))
+        }
+    }, [])
 
     const onHandleChange = ({ target }) => {
         setState(prev => ({
@@ -24,30 +39,34 @@ const LoginForm = (props) => {
         }))
     }
 
-
     const onSubmitForm = async (event) => {
         event.preventDefault();
         let login = props.login(state.data, props.history);
         Promise.all([login]).then(Response => {
-            if (Response[0].status === 'OK') props.history.push('/news');
-            setState(prev => ({
-                ...prev,
-                data: {
+            console.log(Response)
+            if (Response[0]?.status === 'OK') props.history.push('/news');
+            else {
+                setState(prev => ({
                     ...prev,
-                    email: '',
-                    password: ''
-                }
-            }));
-
+                    data: {
+                        ...prev,
+                        email: '',
+                        password: ''
+                    },
+                    error: Response[0].error.error
+                }));
+            }
         })
     }
+
+
 
     const { email, password } = state.data;
     return <form className={style.Form} onSubmit={onSubmitForm} >
         <input type='text' placeholder={'Email'} name={'email'} value={email} onChange={onHandleChange} />
         <input type='text' placeholder={'Password'} name={'password'} value={password} onChange={onHandleChange} />
-        {props.error ? <span>{props.error}</span> : ''}
-        <button disabled={props.isFetching ? true : false}>Login</button>
+        {state.error ? <span>{state.error}</span> : ''}
+        <button disabled={state.isFetching ? true : false}>Login</button>
     </form>
 }
 

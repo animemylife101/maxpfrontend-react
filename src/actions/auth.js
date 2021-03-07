@@ -2,11 +2,8 @@ import API from "../api/api"
 import { LOG_IN, LOG_OUT } from "../types/auth";
 import { setError, setPreloader } from './preloader';
 import defineError from '../items-helper/define-error';
-import { browserHistory } from 'react-router'
-import { ROUTING } from "../types/routing";
-import { push } from "react-router-redux";
 
-export const login = (data, history) => async (dispatch) => {
+export const login = (data) => async (dispatch) => {
     dispatch(setError(''));
     dispatch(setPreloader(true));
     try {
@@ -18,12 +15,20 @@ export const login = (data, history) => async (dispatch) => {
             }
         }
         if (response.data.status === 'err') {
-            dispatch(setError(defineError(response.data.message)));
+            let error = dispatch(setError(defineError(response.data.message)));
             dispatch(setPreloader(false));
+            return {
+                status: 'NOT_OK',
+                error
+            }
         }
     } catch (err) {
-        dispatch(setError(defineError('not_connected_to_network')));
+        let error = dispatch(setError(defineError('not_connected_to_network')));
         dispatch(setPreloader(false));
+        return {
+            status: 'NOT_OK',
+            error
+        }
     }
 };
 
