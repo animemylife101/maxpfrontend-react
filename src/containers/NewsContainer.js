@@ -4,6 +4,7 @@ import { compose } from 'redux';
 import { getNews } from '../actions/news';
 import NewsItem from '../items/news/NewsItem';
 import News from '../page/News/News';
+import PropTypes from 'prop-types';
 
 const NewsContainer = ({ news, ...props }) => {
     const data = <div>
@@ -11,6 +12,12 @@ const NewsContainer = ({ news, ...props }) => {
         <p> Количество постов: {news.length} </p>
     </div>
     return <News {...props} data={data} />
+}
+
+NewsContainer.propTypes = {
+    news: PropTypes.array,
+    isFetching: PropTypes.bool.isRequired,
+    error: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({

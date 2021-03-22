@@ -1,9 +1,9 @@
 import React from 'react';
-import Nav from '../Nav/Nav';
+import NavContainer from '../../containers/NavContainer';
 
 const Header = () => {
     return <div data-testid='header_page' >
-        <Nav />
+        <NavContainer />
     </div>
 }
 

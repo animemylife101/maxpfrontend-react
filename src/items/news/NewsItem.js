@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const NewsItem = (props) => {
-    return <NewsItemStyle>
-        <p>{props.title}</p>
-        <span>{props.text}</span>
+const NewsItem = ({text, title}) => {
+ return <NewsItemStyle>
+        <p><b>{title}</b></p>
+        <span>{text}</span>
     </NewsItemStyle>
+}
+
+NewsItem.propTypes = {
+    text: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
 }
 
 const NewsItemStyle = styled.div`

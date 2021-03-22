@@ -1,5 +1,6 @@
-import { connect } from "react-redux"
-import { Redirect } from "react-router-dom"
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const withAuthRedirect = (Component) => {
 
@@ -11,11 +12,15 @@ const withAuthRedirect = (Component) => {
         return <Component />
     }
 
+    WrapperComponent.propTypes = {
+        userId: PropTypes.string
+    }
+
     const mapStateToProps = (state) => ({
         userId: state.auth.userId
     })
 
-    const withAuthRedirectComponent = connect(mapStateToProps, {})(WrapperComponent);
+    const withAuthRedirectComponent = connect(mapStateToProps, null)(WrapperComponent);
     return withAuthRedirectComponent;
 }
 

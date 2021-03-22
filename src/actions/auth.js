@@ -37,26 +37,12 @@ export const login = (data, meta, type) => async (dispatch) => {
             dispatch(loginWithGoogle());
         }
         default:
-            break;
+            break
     }
 };
 
-export const loginWithGoogle = () => ({
-    type: LOGIN_WITH_GOOGLE
-})
+export const loginWithGoogle = () => ({ type: LOGIN_WITH_GOOGLE });
+export const logout = () => (dispatch) => { dispatch(unfollowSucces()); }
 
-export const logout = () => (dispatch) => {
-    dispatch(unfollowSucces());
-}
-
-// export const login = () => (dispatch) => {
-//     dispatch(loginSucces());
-// }
-
-const loginSucces = (data) => ({
-    type: LOG_IN,
-});
-
-const unfollowSucces = () => ({
-    type: LOG_OUT
-});
+const loginSucces = () => ({ type: LOG_IN });
+const unfollowSucces = () => ({ type: LOG_OUT });

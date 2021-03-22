@@ -1,7 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const IsLoading = (props) => {
-    return props.isFetching ? props.children : <h1>Wait...</h1>;
+const IsLoading = ({isFetching, children}) => {
+    return isFetching ? children : <h1>Wait...</h1>;
+}
+
+IsLoading.propTypes = {
+    isFetching: PropTypes.bool.isRequired,
+    children: PropTypes.object.isRequired
 }
 
 export default IsLoading;

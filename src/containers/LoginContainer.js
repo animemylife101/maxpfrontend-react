@@ -5,6 +5,7 @@ import { compose } from "redux";
 import { login } from "../actions/auth";
 import Login from "../page/Login/Login"
 import google from "../responsibility/google";
+import PropTypes from 'prop-types';
 
 const LoginContainer = (props) => {
     let [state, setState] = useState({
@@ -16,7 +17,6 @@ const LoginContainer = (props) => {
         error: props.error,
         inProgress: false
     });
-
 
     const changeState = (currentState) => {
         let template = (arg) => {
@@ -55,6 +55,11 @@ const LoginContainer = (props) => {
         googleRequest={googleRequest} googleFailure={googleFailure}
         googleSucess={googleSucess} {...props} />
 }
+
+LoginContainer.propTypes = {
+    isFetching: PropTypes.bool.isRequired,
+    error: PropTypes.string
+};
 
 const mapStateToProps = (state) => ({
     isFetching: state.preloader.isFetching,

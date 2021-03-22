@@ -1,7 +1,7 @@
 import { GET_PROFILE } from "../types/profile"
 
 const initializationState = {
-    profile: []
+    profile: {}
 }
 
 const profileReducer = (state = initializationState, action) => {

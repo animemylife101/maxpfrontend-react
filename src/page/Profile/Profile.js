@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from 'react';
 import IsLoading from '../../tools/isLoading';
+import PropTypes from 'prop-types';
 
 const Profile = ({ getProfile, userId, isFetching, error, data }) => {
     useLayoutEffect(() => {
@@ -10,6 +11,13 @@ const Profile = ({ getProfile, userId, isFetching, error, data }) => {
             {error === 'profile_ok' ? data : <h1>{error}</h1>}
         </IsLoading>
     </div>
+}
+
+Profile.propTypes = {
+    getProfile: PropTypes.func,
+    isFetching: PropTypes.bool.isRequired,
+    error: PropTypes.string,
+    data: PropTypes.object
 }
 
 export default Profile;
