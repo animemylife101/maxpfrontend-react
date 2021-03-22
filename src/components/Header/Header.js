@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from '../Nav/Nav';
 
 const Header = () => {
-    return <div>
+    return <div data-testid='header_page' >
         <Nav />
     </div>
 }

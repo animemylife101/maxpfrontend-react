@@ -5,7 +5,7 @@ const Profile = ({ getProfile, userId, isFetching, error, data }) => {
     useLayoutEffect(() => {
         getProfile(userId);
     }, []);
-    return <div>
+    return <div data-testid='profile-page' >
         <IsLoading isFetching={isFetching}>
             {error === 'profile_ok' ? data : <h1>{error}</h1>}
         </IsLoading>

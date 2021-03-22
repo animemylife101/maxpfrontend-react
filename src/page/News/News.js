@@ -7,7 +7,7 @@ const News = ({ error, getNews, data, isFetching }) => {
         getNews();
     }, []);
 
-    return <div>
+    return <div data-testid='news_page'>
         <IsLoading isFetching={isFetching}>
             {error === 'news_ok' ? data : <h1>{error}</h1>}
         </IsLoading>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Error = ({error}) => {
-    return <div>
+    return <div data-testid='error_page'> 
         {error ? <span>{error}</span> : ''}
     </div>
 }
