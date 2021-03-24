@@ -3,7 +3,7 @@
 <i>This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).</i>
 
 In the project directory, you can run:
- <h2>npm start</h2>
+ <h2>Npm start</h2>
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -11,7 +11,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
- <h2>npm test</h2>
+ <h2>Npm test</h2>
 
  <h4>Example of test</h4>
  
