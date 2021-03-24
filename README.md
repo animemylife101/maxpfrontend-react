@@ -24,7 +24,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
     Enzyme
    </li>
  </ul>
-<h1>Endpoints</h1>
-
+ 
 <hr />
+<h2>Endpoints</h2>
 <h3>POST https://mysterious-reef-29460.herokuapp.com/api/v1/validate</h3>
