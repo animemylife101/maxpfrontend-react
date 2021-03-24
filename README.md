@@ -26,4 +26,5 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
  </ul>
 <h1>Endpoints</h1>
 
-##<h1>POST https://mysterious-reef-29460.herokuapp.com/api/v1/validate</h1>
+<hr />
+<h2>POST https://mysterious-reef-29460.herokuapp.com/api/v1/validate</h2>
