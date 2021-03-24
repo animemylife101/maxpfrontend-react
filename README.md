@@ -32,7 +32,11 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
   <h3>result</h3>
   
    ```javascript
-   var s = "Подсветка JavaScript";
-   alert(s); 
+   {
+  "status": "ok",
+  "data": {
+    "id": 1
+  }
+} 
   ```
  
