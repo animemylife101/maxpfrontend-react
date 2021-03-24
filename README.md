@@ -5,7 +5,7 @@
 In the project directory, you can run:
 <ul>
  <li>
-### `npm start`
+ <b>npm start<b>
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -15,7 +15,7 @@ You will also see any lint errors in the console.
 </li>
 
  <li>
-### `npm test`
+ <b>npm test</b>
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
