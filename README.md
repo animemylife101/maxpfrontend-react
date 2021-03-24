@@ -17,7 +17,6 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
  <h2>Testing tools</h2>
  <ul>
-  <li><h3>Jest</h3></li>
-  <li><h3>Enzyme</h3></li>
+ <li>dsadsa</li>
  </ul>
 
