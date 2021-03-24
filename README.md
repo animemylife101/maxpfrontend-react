@@ -132,7 +132,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
  ```
  
 <h2>PropTypes</h2>
- <h4>Example of test</h4>
+ <h4>Example of propTypes using</h4>
  
  ```javascript
   ProfileContainer.propTypes = {
@@ -150,3 +150,13 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
     error: PropTypes.string
  }
  ```
+<h2>Google integration</h2>
+```javascript
+{
+ props.userId
+  ? <GoogleLogout clientId='616850661912-tfs0513h7vrh5m2ljvrtq0o952abv74k.apps.googleusercontent.com'
+       buttonText='Выйти' onLogoutSuccess={responseGoogleLogout} />
+   : <GoogleLogin clientId='616850661912-tfs0513h7vrh5m2ljvrtq0o952abv74k.apps.googleusercontent.com'
+        buttonText='Войти' onSuccess={responseGoogleLogin} onFailure={responseGoogleLogin} cookiePolicy={'single_host_origin'} />
+ }
+```
