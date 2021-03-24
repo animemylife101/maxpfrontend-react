@@ -19,11 +19,9 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
  <ul>
    <li>
     Jest
-    <img src = 'https://prnt.sc/10udwpt'></img>
    </li>
-   
-  <li>
-  Enzyme
- </li>
+   <li>
+    Enzyme
+   </li>
  </ul>
 
