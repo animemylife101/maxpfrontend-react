@@ -41,11 +41,10 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
   ```
   <h3>If the data is incorrect</h3>
   
-     ```javascript
+   ```javascript
    {
-   "status": "err",
-   "message": "wrong_email_or_password"
-  }
-
+    "status": "err",
+    "message": "wrong_email_or_password"
+   }
   ```
  
