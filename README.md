@@ -28,7 +28,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 <hr />
 <h2>Endpoints</h2>
  
-  <h4>POST https://mysterious-reef-29460.herokuapp.com/api/v1/validate</h4>
+  <h4>POST https://mysterious-reef-29460.herokuapp.com/api/v1/validate / login request</h4>
   <h3>Output</h3>
   
    ```javascript
@@ -48,3 +48,43 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
    }
   ```
  
+ <h4>GET https://mysterious-reef-29460.herokuapp.com/api/v1/user-info/2 / profile request </h4>
+   ```javascript
+   {
+  "status": "ok",
+  "data": {
+    "userId": 1,
+    "city": "Москва",
+    "languages": [
+      "English",
+      "Русский"
+    ],
+    "social": [
+      {
+        "label": "vk",
+        "link": "vk.com/maxpfrontend"
+      },
+      {
+        "label": "telegram",
+        "link": "t.me/maxpfrontend"
+      },
+      {
+        "label": "web",
+        "link": "https://maxpfrontend.ru"
+      },
+      {
+        "label": "youtube",
+        "link": "https://www.youtube.com/channel/UCqJyAVWwIqPWKEkfCSP1y4Q"
+      },
+      {
+        "label": "twitter",
+        "link": "https://twitter.com/MaxPatsiansky"
+      },
+      {
+        "label": "twitch",
+        "link": "http://twich.tv/maxpfrontend"
+      }
+    ]
+  }
+}
+  ```
