@@ -33,10 +33,10 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
   
    ```javascript
    {
-  "status": "ok",
-  "data": {
-    "id": 1
-  }
-} 
+    "status": "ok",
+    "data": {
+     "id": 1
+     }
+  } 
   ```
  
