@@ -163,6 +163,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ```
 
 <h2>All dependencies & libraries</h2>
+
 ```javascript
 {
   "name": "social-network-task",
