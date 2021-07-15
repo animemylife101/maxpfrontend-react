@@ -1,5 +1,4 @@
-<h1># React App</h1>
- <h2>npm test</h2>
+<h2>npm test</h2>
 
  <h4>Example of test</h4>
  
